@@ -1,0 +1,70 @@
+
+$color1 : rgb(234, 240, 241);
+$color2 :  rgb(37, 50, 109);
+$colorText :  rgb(250, 150, 0);
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font:13px Arial;
+    // background: linear-gradient(#99B2DD, #0D185D);
+}
+
+.background {
+    color: red;
+    // background: url("assets/pictures/earth-1149733_1920.jpg");
+    background: linear-gradient(#99B2DD, #0D185D);
+    height: 100vh;
+}
+
+form {
+    background: rgb(212,212,212);
+    padding:3px;
+    position:fixed;
+    margin-left: 10%;
+    bottom:1rem;
+    width:80%;
+    border-radius: 5px;
+}
+
+form input {
+    border: 0;
+    padding: 10px;
+    width: 90%;
+    margin-right: .5%;
+}
+
+form button {
+    width: 9%;
+    color: $color1;
+    background: rgb(0, 19, 128);
+    // border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: grab;
+}
+
+#messages {
+    list-style-type: none;
+    color:$colorText;
+    margin:0;
+    padding: 0;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#messages li {
+    padding: 5px 10px;
+}
+
+#messages mo:nth-child(odd) {
+    background: rgb(155, 32, 57);
+}

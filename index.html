@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="./css" />
+    <!-- <link rel=”shortcut icon” href=“images/favicon.ico”> -->
+    <!-- <style>
+        div {
+            background-image: url('assets/pictures/earth-1149733_1920.jpg');
+        }
+    </style> -->
+</head>
+
+<body>
+
+    <div class="background">
+
+        <!-- Form to write messages -->
+
+        <ul id="messages"></ul>
+        <form action="">
+            <input id="m" autocomplete="off">
+            <button>Send</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // in jquery
+        $(function () {
+            let socket = io();
+
+            $('form').submit(function () {
+                socket.emit('chat', $("#m").val());
+                $("#m").val('');
+                return false;
+            })
+            socket.on('chat', function (msg) {
+                $("#messages").append($("<li>").text(msg));
+            })
+        })
+    </script>
+</body>
+
+</html>
